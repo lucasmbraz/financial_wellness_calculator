@@ -1,0 +1,1 @@
+export 'input/view/score_calculator_input_page.dart';

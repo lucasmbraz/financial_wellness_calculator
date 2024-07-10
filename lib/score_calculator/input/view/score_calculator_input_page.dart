@@ -13,47 +13,49 @@ class ScoreCalculatorInputPage extends StatelessWidget {
       appBar: AppBar(
         title: SvgPicture.asset('assets/logo.svg', height: 20),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
-        child: Column(
-          children: [
-            RichText(
-              textAlign: TextAlign.center,
-              text: TextSpan(
-                text: "Let's find out your ",
-                style: AppTextStyles.subtitle.copyWith(
-                  color: context.appColors.foregroundAccent,
-                ),
-                children: [
-                  TextSpan(
-                    text: 'financial wellness score.',
-                    style: AppTextStyles.subtitleLg,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+          child: Column(
+            children: [
+              RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  text: "Let's find out your ",
+                  style: AppTextStyles.subtitle.copyWith(
+                    color: context.appColors.foregroundAccent,
                   ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 24),
-            AppCard(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
                   children: [
-                    SvgPicture.asset('assets/score_icon.svg', height: 48),
-                    const SizedBox(height: 16),
-                    AppText.headingSmall('Financial wellness test'),
-                    AppText.paragraph(
-                      'Enter your financial information below',
-                      color: context.appColors.foregroundTertiary,
+                    TextSpan(
+                      text: 'financial wellness score.',
+                      style: AppTextStyles.subtitleLg,
                     ),
-                    const SizedBox(height: 16),
-                    const _Form(),
                   ],
                 ),
               ),
-            ),
-            const SizedBox(height: 24),
-            const Footer(),
-          ],
+              const SizedBox(height: 24),
+              AppCard(
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      SvgPicture.asset('assets/score_icon.svg', height: 48),
+                      const SizedBox(height: 16),
+                      AppText.headingSmall('Financial wellness test'),
+                      AppText.paragraph(
+                        'Enter your financial information below',
+                        color: context.appColors.foregroundTertiary,
+                      ),
+                      const SizedBox(height: 16),
+                      const _Form(),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 24),
+              const Footer(),
+            ],
+          ),
         ),
       ),
     );

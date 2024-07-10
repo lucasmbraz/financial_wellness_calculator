@@ -17,63 +17,66 @@ class ScoreCalculatorResultsPage extends StatelessWidget {
         title: SvgPicture.asset('assets/logo.svg', height: 20),
         automaticallyImplyLeading: false,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
-        child: Column(
-          children: [
-            RichText(
-              textAlign: TextAlign.center,
-              text: TextSpan(
-                text: "Here's your ",
-                style: AppTextStyles.subtitle.copyWith(
-                  color: context.appColors.foregroundAccent,
-                ),
-                children: [
-                  TextSpan(
-                    text: 'financial wellness score.',
-                    style: AppTextStyles.subtitleLg,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+          child: Column(
+            children: [
+              RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  text: "Here's your ",
+                  style: AppTextStyles.subtitle.copyWith(
+                    color: context.appColors.foregroundAccent,
                   ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 24),
-            AppCard(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
                   children: [
-                    SvgPicture.asset('assets/score_icon.svg', height: 48),
-                    const SizedBox(height: 24),
-                    ScoreIndicator(score: score),
-                    const SizedBox(height: 24),
-                    AppText.headingSmall(score.title),
-                    RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                        text: "Your financial wellness score is ",
-                        style: AppTextStyles.paragraph.copyWith(
-                          color: context.appColors.foregroundSecondary,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: score.description,
-                            style: const TextStyle(fontWeight: FontWeight.w600),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 32),
-                    AppButton.secondary(
-                      onPressed: () => Navigator.pop(context),
-                      child: const Text('Return'),
+                    TextSpan(
+                      text: 'financial wellness score.',
+                      style: AppTextStyles.subtitleLg,
                     ),
                   ],
                 ),
               ),
-            ),
-            const SizedBox(height: 24),
-            const Footer(),
-          ],
+              const SizedBox(height: 24),
+              AppCard(
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      SvgPicture.asset('assets/score_icon.svg', height: 48),
+                      const SizedBox(height: 24),
+                      ScoreIndicator(score: score),
+                      const SizedBox(height: 24),
+                      AppText.headingSmall(score.title),
+                      RichText(
+                        textAlign: TextAlign.center,
+                        text: TextSpan(
+                          text: "Your financial wellness score is ",
+                          style: AppTextStyles.paragraph.copyWith(
+                            color: context.appColors.foregroundSecondary,
+                          ),
+                          children: [
+                            TextSpan(
+                              text: score.description,
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.w600),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 32),
+                      AppButton.secondary(
+                        onPressed: () => Navigator.pop(context),
+                        child: const Text('Return'),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 24),
+              const Footer(),
+            ],
+          ),
         ),
       ),
     );

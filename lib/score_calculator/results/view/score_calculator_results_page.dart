@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kalshi_score/score_calculator/widgets/footer.dart';
+import 'package:kalshi_score/score_calculator/widgets/score_indicator.dart';
 
 class ScoreCalculatorResultsPage extends StatelessWidget {
   const ScoreCalculatorResultsPage({super.key});
@@ -9,7 +10,7 @@ class ScoreCalculatorResultsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.appColors.backgroundSecondary,
+      backgroundColor: context.appColors.backgroundTertiary,
       appBar: AppBar(
         title: SvgPicture.asset('assets/logo.svg', height: 20),
         automaticallyImplyLeading: false,
@@ -35,13 +36,16 @@ class ScoreCalculatorResultsPage extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             Card(
-              elevation: 1,
+              color: context.appColors.backgroundPrimary,
+              elevation: 0,
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: Column(
                   children: [
                     SvgPicture.asset('assets/score_icon.svg', height: 48),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 24),
+                    const ScoreIndicator(score: Score.healthy),
+                    const SizedBox(height: 24),
                     AppText.headingSmall('Congratulations!'),
                     RichText(
                       textAlign: TextAlign.center,

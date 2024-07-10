@@ -5,7 +5,9 @@ class AppColors {
 
   Color get backgroundPrimary => Colors.white;
 
-  Color get backgroundSecondary => const Color(0xFFF4F8FA);
+  Color get backgroundSecondary => const Color(0xFFE9EEF2);
+
+  Color get backgroundTertiary => const Color(0xFFF4F8FA);
 
   Color get backgroundAccent => const Color(0xFF001C95);
 
@@ -20,6 +22,8 @@ class AppColors {
   Color get foregroundAlternative => Colors.white;
 
   Color get borderPrimary => const Color(0xFFE9EEF2);
+
+  Color get borderAlternative => Colors.white;
 
   Color get borderAccent => const Color(0xFF001C95);
 

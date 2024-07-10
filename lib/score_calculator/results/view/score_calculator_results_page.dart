@@ -1,6 +1,7 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:kalshi_score/score_calculator/widgets/footer.dart';
 
 class ScoreCalculatorResultsPage extends StatelessWidget {
   const ScoreCalculatorResultsPage({super.key});
@@ -35,6 +36,7 @@ class ScoreCalculatorResultsPage extends StatelessWidget {
             const SizedBox(height: 24),
             Card(),
             const SizedBox(height: 24),
+            const Footer(),
           ],
         ),
       ),

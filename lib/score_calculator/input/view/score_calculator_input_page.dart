@@ -87,13 +87,7 @@ class _FormState extends State<_Form> {
           const SizedBox(height: 16),
           SizedBox(
             width: double.infinity,
-            height: 56,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: context.appColors.backgroundAccent,
-                foregroundColor: context.appColors.foregroundAlternative,
-                textStyle: AppTextStyles.button,
-              ),
+            child: AppButton(
               onPressed: () {
                 // Validate returns true if the form is valid, or false otherwise.
                 if (_formKey.currentState!.validate()) {

@@ -1,6 +1,7 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:kalshi_score/score_calculator/results/view/score_calculator_results_page.dart';
 
 class ScoreCalculatorInputPage extends StatelessWidget {
   const ScoreCalculatorInputPage({super.key});
@@ -89,9 +90,11 @@ class _FormState extends State<_Form> {
             width: double.infinity,
             child: AppButton(
               onPressed: () {
-                // Validate returns true if the form is valid, or false otherwise.
                 if (_formKey.currentState!.validate()) {
-                  // Process data.
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                        builder: (_) => const ScoreCalculatorResultsPage()),
+                  );
                 }
               },
               child: const Text('Continue'),

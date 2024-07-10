@@ -10,6 +10,12 @@ class AppTextStyles {
     height: 24 / 20,
   );
 
+  static final TextStyle lgHeadingSmall = GoogleFonts.rubik(
+    fontWeight: FontWeight.w500,
+    fontSize: 24,
+    height: 28.8 / 24,
+  );
+
   static final TextStyle subtitle = GoogleFonts.workSans(
     fontWeight: FontWeight.w400,
     fontSize: 18,

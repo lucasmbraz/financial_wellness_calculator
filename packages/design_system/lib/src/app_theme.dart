@@ -10,6 +10,7 @@ class AppTheme {
     appBarTheme: AppBarTheme(
       backgroundColor: const AppColors().backgroundPrimary,
       elevation: 0,
+      toolbarHeight: 80,
     ),
   );
 }

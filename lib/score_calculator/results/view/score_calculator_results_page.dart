@@ -37,9 +37,7 @@ class ScoreCalculatorResultsPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            Card(
-              color: context.appColors.backgroundPrimary,
-              elevation: 0,
+            AppCard(
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: Column(

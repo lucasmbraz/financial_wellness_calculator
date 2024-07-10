@@ -33,8 +33,7 @@ class ScoreCalculatorInputPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            Card(
-              elevation: 1,
+            AppCard(
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: Column(

@@ -28,6 +28,8 @@ class AppColors {
   Color get borderAccent => const Color(0xFF001C95);
 
   Color get borderNegative => Colors.red.shade300;
+
+  Color get shadow => const Color(0xFF1E2A32).withOpacity(0.08);
 }
 
 extension AppColorsExtension on BuildContext {

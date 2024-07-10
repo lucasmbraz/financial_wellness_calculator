@@ -81,65 +81,9 @@ class _FormState extends State<_Form> {
       key: _formKey,
       child: Column(
         children: [
-          Row(
-            children: [
-              AppText.description('Annual income'),
-            ],
-          ),
-          const SizedBox(height: 8),
-          TextFormField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              // you can also define different border styles for different states
-              // e.g. when the field is enabled / focused / has error
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: context.appColors.borderPrimary),
-              ),
-              focusedBorder: const OutlineInputBorder(),
-              errorBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: context.appColors.borderNegative),
-              ),
-            ),
-            // The validator receives the text that the user has entered.
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-          ),
+          const AppInputField(label: 'Annual income'),
           const SizedBox(height: 16),
-          Row(
-            children: [
-              AppText.description('Monthly Costs'),
-            ],
-          ),
-          const SizedBox(height: 8),
-          TextFormField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              // you can also define different border styles for different states
-              // e.g. when the field is enabled / focused / has error
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: context.appColors.borderPrimary),
-              ),
-              focusedBorder: const OutlineInputBorder(),
-              errorBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: context.appColors.borderNegative),
-              ),
-            ),
-            // The validator receives the text that the user has entered.
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-          ),
+          const AppInputField(label: 'Monthly Costs'),
           const SizedBox(height: 16),
           SizedBox(
             width: double.infinity,

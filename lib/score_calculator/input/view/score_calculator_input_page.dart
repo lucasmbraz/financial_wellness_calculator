@@ -1,7 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ScoreCalculatorInputPage extends StatelessWidget {
   const ScoreCalculatorInputPage({super.key});
@@ -20,20 +19,13 @@ class ScoreCalculatorInputPage extends StatelessWidget {
               textAlign: TextAlign.center,
               text: TextSpan(
                 text: "Let's find out your ",
-                style: GoogleFonts.workSans(
-                  fontSize: 18,
-                  height: 27 / 18,
-                  fontWeight: FontWeight.w400,
+                style: AppTextStyles.subtitle.copyWith(
                   color: context.appColors.foregroundAccent,
                 ),
-                children: const <TextSpan>[
+                children: [
                   TextSpan(
                     text: 'financial wellness score.',
-                    style: TextStyle(
-                      fontSize: 20,
-                      height: 24 / 20,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: AppTextStyles.subtitleLg,
                   ),
                 ],
               ),
@@ -47,23 +39,10 @@ class ScoreCalculatorInputPage extends StatelessWidget {
                   children: [
                     SvgPicture.asset('assets/score_icon.svg', height: 48),
                     const SizedBox(height: 16),
-                    Text(
-                      'Financial wellness test',
-                      style: GoogleFonts.rubik(
-                        fontSize: 20,
-                        height: 24 / 20,
-                        fontWeight: FontWeight.w500,
-                        color: context.appColors.foregroundPrimary,
-                      ),
-                    ),
-                    Text(
+                    AppText.headingSmall('Financial wellness test'),
+                    AppText.paragraph(
                       'Enter your financial information below',
-                      style: GoogleFonts.workSans(
-                        fontSize: 14,
-                        height: 21 / 14,
-                        fontWeight: FontWeight.w400,
-                        color: context.appColors.foregroundTertiary,
-                      ),
+                      color: context.appColors.foregroundTertiary,
                     ),
                     const SizedBox(height: 16),
                     const _Form(),
@@ -74,14 +53,9 @@ class ScoreCalculatorInputPage extends StatelessWidget {
             const SizedBox(height: 36),
             SvgPicture.asset('assets/lock_icon.svg', height: 24),
             const SizedBox(height: 16),
-            Text(
+            AppText.paragraph(
               "Your financial information is encrypted and secure. We'll never share or sell any of your personal data.",
-              style: GoogleFonts.workSans(
-                fontSize: 12,
-                height: 18 / 12,
-                fontWeight: FontWeight.w400,
-                color: context.appColors.foregroundTertiary,
-              ),
+              color: context.appColors.foregroundTertiary,
               textAlign: TextAlign.center,
             ),
           ],
@@ -109,15 +83,7 @@ class _FormState extends State<_Form> {
         children: [
           Row(
             children: [
-              Text(
-                'Annual income',
-                style: GoogleFonts.workSans(
-                  fontSize: 12,
-                  height: 18 / 12,
-                  fontWeight: FontWeight.w400,
-                  color: context.appColors.foregroundPrimary,
-                ),
-              ),
+              AppText.description('Annual income'),
             ],
           ),
           const SizedBox(height: 8),
@@ -147,15 +113,7 @@ class _FormState extends State<_Form> {
           const SizedBox(height: 16),
           Row(
             children: [
-              Text(
-                'Monthly Costs',
-                style: GoogleFonts.workSans(
-                  fontSize: 12,
-                  height: 18 / 12,
-                  fontWeight: FontWeight.w400,
-                  color: context.appColors.foregroundPrimary,
-                ),
-              ),
+              AppText.description('Monthly Costs'),
             ],
           ),
           const SizedBox(height: 8),
@@ -190,11 +148,7 @@ class _FormState extends State<_Form> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: context.appColors.backgroundAccent,
                 foregroundColor: context.appColors.foregroundAlternative,
-                textStyle: GoogleFonts.workSans(
-                  fontSize: 16,
-                  height: 16 / 16,
-                  fontWeight: FontWeight.w500,
-                ),
+                textStyle: AppTextStyles.button,
               ),
               onPressed: () {
                 // Validate returns true if the form is valid, or false otherwise.

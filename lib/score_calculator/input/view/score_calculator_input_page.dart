@@ -81,19 +81,16 @@ class _FormState extends State<_Form> {
           const SizedBox(height: 16),
           const AppInputField(label: 'Monthly Costs'),
           const SizedBox(height: 16),
-          SizedBox(
-            width: double.infinity,
-            child: AppButton(
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                        builder: (_) => const ScoreCalculatorResultsPage()),
-                  );
-                }
-              },
-              child: const Text('Continue'),
-            ),
+          AppButton(
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (_) => const ScoreCalculatorResultsPage()),
+                );
+              }
+            },
+            child: const Text('Continue'),
           ),
         ],
       ),

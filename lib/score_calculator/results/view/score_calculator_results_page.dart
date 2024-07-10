@@ -34,7 +34,39 @@ class ScoreCalculatorResultsPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            Card(),
+            Card(
+              elevation: 1,
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    SvgPicture.asset('assets/score_icon.svg', height: 48),
+                    const SizedBox(height: 16),
+                    AppText.headingSmall('Congratulations!'),
+                    RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        text: "Your financial wellness score is ",
+                        style: AppTextStyles.paragraph.copyWith(
+                          color: context.appColors.foregroundSecondary,
+                        ),
+                        children: const [
+                          TextSpan(
+                            text: 'Healthy.',
+                            style: TextStyle(fontWeight: FontWeight.w600),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 32),
+                    AppButton.secondary(
+                      onPressed: () => Navigator.pop(context),
+                      child: const Text('Return'),
+                    ),
+                  ],
+                ),
+              ),
+            ),
             const SizedBox(height: 24),
             const Footer(),
           ],

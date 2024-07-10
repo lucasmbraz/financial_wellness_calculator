@@ -21,6 +21,8 @@ class AppColors {
 
   Color get borderPrimary => const Color(0xFFE9EEF2);
 
+  Color get borderAccent => const Color(0xFF001C95);
+
   Color get borderNegative => Colors.red.shade300;
 }
 

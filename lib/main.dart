@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 import 'score_calculator/score_calculator.dart';
@@ -11,8 +12,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ScoreCalculatorInputPage(),
+    return MaterialApp(
+      theme: AppTheme.light,
+      home: const ScoreCalculatorInputPage(),
     );
   }
 }

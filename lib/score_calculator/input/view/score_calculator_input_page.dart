@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,7 +24,7 @@ class ScoreCalculatorInputPage extends StatelessWidget {
                   fontSize: 18,
                   height: 27 / 18,
                   fontWeight: FontWeight.w400,
-                  color: const Color(0xFF001C95),
+                  color: context.appColors.foregroundAccent,
                 ),
                 children: const <TextSpan>[
                   TextSpan(
@@ -39,7 +40,6 @@ class ScoreCalculatorInputPage extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             Card(
-              color: Colors.white,
               elevation: 1,
               child: Padding(
                 padding: const EdgeInsets.all(16),
@@ -53,7 +53,7 @@ class ScoreCalculatorInputPage extends StatelessWidget {
                         fontSize: 20,
                         height: 24 / 20,
                         fontWeight: FontWeight.w500,
-                        color: const Color(0xFF1E2A32),
+                        color: context.appColors.foregroundPrimary,
                       ),
                     ),
                     Text(
@@ -62,7 +62,7 @@ class ScoreCalculatorInputPage extends StatelessWidget {
                         fontSize: 14,
                         height: 21 / 14,
                         fontWeight: FontWeight.w400,
-                        color: const Color(0xFF708797),
+                        color: context.appColors.foregroundTertiary,
                       ),
                     ),
                     const SizedBox(height: 16),
@@ -80,7 +80,7 @@ class ScoreCalculatorInputPage extends StatelessWidget {
                 fontSize: 12,
                 height: 18 / 12,
                 fontWeight: FontWeight.w400,
-                color: const Color(0xFF8A9CA9),
+                color: context.appColors.foregroundTertiary,
               ),
               textAlign: TextAlign.center,
             ),
@@ -115,7 +115,7 @@ class _FormState extends State<_Form> {
                   fontSize: 12,
                   height: 18 / 12,
                   fontWeight: FontWeight.w400,
-                  color: const Color(0xFF1E2A32),
+                  color: context.appColors.foregroundPrimary,
                 ),
               ),
             ],
@@ -128,12 +128,13 @@ class _FormState extends State<_Form> {
               ),
               // you can also define different border styles for different states
               // e.g. when the field is enabled / focused / has error
-              enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xFFE9EEF2)),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: context.appColors.borderPrimary),
               ),
               focusedBorder: const OutlineInputBorder(),
-              errorBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.red)),
+              errorBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: context.appColors.borderNegative),
+              ),
             ),
             // The validator receives the text that the user has entered.
             validator: (value) {
@@ -152,7 +153,7 @@ class _FormState extends State<_Form> {
                   fontSize: 12,
                   height: 18 / 12,
                   fontWeight: FontWeight.w400,
-                  color: const Color(0xFF1E2A32),
+                  color: context.appColors.foregroundPrimary,
                 ),
               ),
             ],
@@ -165,12 +166,13 @@ class _FormState extends State<_Form> {
               ),
               // you can also define different border styles for different states
               // e.g. when the field is enabled / focused / has error
-              enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xFFE9EEF2)),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: context.appColors.borderPrimary),
               ),
               focusedBorder: const OutlineInputBorder(),
-              errorBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.red)),
+              errorBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: context.appColors.borderNegative),
+              ),
             ),
             // The validator receives the text that the user has entered.
             validator: (value) {
@@ -186,8 +188,8 @@ class _FormState extends State<_Form> {
             height: 56,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF001C95),
-                foregroundColor: Colors.white,
+                backgroundColor: context.appColors.backgroundAccent,
+                foregroundColor: context.appColors.foregroundAlternative,
                 textStyle: GoogleFonts.workSans(
                   fontSize: 16,
                   height: 16 / 16,

@@ -4,6 +4,22 @@ class AppColors {
   const AppColors();
 
   Color get backgroundPrimary => Colors.white;
+
+  Color get backgroundAccent => const Color(0xFF001C95);
+
+  Color get foregroundPrimary => const Color(0xFF1E2A32);
+
+  Color get foregroundSecondary => const Color(0xFF4D6475);
+
+  Color get foregroundTertiary => const Color(0xFF708797);
+
+  Color get foregroundAccent => const Color(0xFF001C95);
+
+  Color get foregroundAlternative => Colors.white;
+
+  Color get borderPrimary => const Color(0xFFE9EEF2);
+
+  Color get borderNegative => Colors.red.shade300;
 }
 
 extension AppColorsExtension on BuildContext {

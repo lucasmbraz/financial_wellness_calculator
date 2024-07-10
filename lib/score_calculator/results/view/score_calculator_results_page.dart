@@ -7,6 +7,8 @@ import 'package:kalshi_score/score_calculator/widgets/score_indicator.dart';
 class ScoreCalculatorResultsPage extends StatelessWidget {
   const ScoreCalculatorResultsPage({super.key});
 
+  final score = Score.healthy;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,9 +46,9 @@ class ScoreCalculatorResultsPage extends StatelessWidget {
                   children: [
                     SvgPicture.asset('assets/score_icon.svg', height: 48),
                     const SizedBox(height: 24),
-                    const ScoreIndicator(score: Score.healthy),
+                    ScoreIndicator(score: score),
                     const SizedBox(height: 24),
-                    AppText.headingSmall('Congratulations!'),
+                    AppText.headingSmall(score.title),
                     RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
@@ -54,10 +56,10 @@ class ScoreCalculatorResultsPage extends StatelessWidget {
                         style: AppTextStyles.paragraph.copyWith(
                           color: context.appColors.foregroundSecondary,
                         ),
-                        children: const [
+                        children: [
                           TextSpan(
-                            text: 'Healthy.',
-                            style: TextStyle(fontWeight: FontWeight.w600),
+                            text: score.description,
+                            style: const TextStyle(fontWeight: FontWeight.w600),
                           ),
                         ],
                       ),
@@ -77,5 +79,23 @@ class ScoreCalculatorResultsPage extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+extension on Score {
+  String get title {
+    return switch (this) {
+      Score.healthy => 'Congratulations!',
+      Score.average => 'There is room for improvement.',
+      Score.unhealthy => 'Caution!',
+    };
+  }
+
+  String get description {
+    return switch (this) {
+      Score.healthy => 'Healthy.',
+      Score.average => 'Average.',
+      Score.unhealthy => 'Unhealthy.',
+    };
   }
 }

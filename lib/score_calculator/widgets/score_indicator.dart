@@ -2,17 +2,15 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 enum Score {
-  healthy,
-  average,
-  unhealthy;
+  healthy(color: Colors.green),
+  average(color: Colors.yellow),
+  unhealthy(color: Colors.red);
 
-  Color get color {
-    return switch (this) {
-      Score.healthy => Colors.green,
-      Score.average => Colors.yellow,
-      Score.unhealthy => Colors.red,
-    };
-  }
+  const Score({
+    required this.color,
+  });
+
+  final Color color;
 }
 
 class ScoreIndicator extends StatelessWidget {

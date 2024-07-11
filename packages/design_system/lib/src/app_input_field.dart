@@ -17,6 +17,7 @@ class AppInputField extends StatelessWidget {
         AppText.description(label),
         const SizedBox(height: 8),
         TextFormField(
+          maxLength: 17,
           onSaved: (value) => onSaved(value.toDouble()),
           inputFormatters: [ThousandsFormatter()],
           keyboardType: TextInputType.number,
@@ -25,6 +26,7 @@ class AppInputField extends StatelessWidget {
           ),
           initialValue: '0',
           decoration: InputDecoration(
+            counterText: '',
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
             prefixIcon: Padding(

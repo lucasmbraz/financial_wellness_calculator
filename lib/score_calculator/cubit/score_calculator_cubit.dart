@@ -15,20 +15,28 @@ class ScoreCalculatorCubit extends Cubit<ScoreCalculatorState> {
   }) {
     _resetRating();
 
-    final annualCost = AnnualCost(monthlyCost: monthlyCost);
-    final netIncome = NetIncome(
-      grossIncome: annualGrossIncome,
-      taxRate: _defaultTaxRate,
-    );
-    final score = Score(
-      annualCost: annualCost,
-      annualNetIncome: netIncome,
-    );
+    final score = _calculateScore(
+        annualGrossIncome: annualGrossIncome, monthlyCost: monthlyCost);
 
     emit(state.copyWith(rating: score.rating));
   }
 
   void _resetRating() {
     emit(const ScoreCalculatorState());
+  }
+
+  Score _calculateScore({
+    required Money annualGrossIncome,
+    required Money monthlyCost,
+  }) {
+    final annualCost = AnnualCost(monthlyCost: monthlyCost);
+    final netIncome = NetIncome(
+      grossIncome: annualGrossIncome,
+      taxRate: _defaultTaxRate,
+    );
+    return Score(
+      annualCost: annualCost,
+      annualNetIncome: netIncome,
+    );
   }
 }

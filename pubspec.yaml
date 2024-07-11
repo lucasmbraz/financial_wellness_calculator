@@ -7,10 +7,13 @@ environment:
   sdk: '>=3.3.3 <4.0.0'
 
 dependencies:
+  bloc: ^8.1.4
   design_system:
     path: packages/design_system
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.6
   flutter_svg: ^2.0.10+1
   google_fonts: ^6.2.1
 

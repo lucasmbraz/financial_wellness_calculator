@@ -1,11 +1,11 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:kalshi_score/score_calculator/results/view/score_calculator_results_page.dart';
-import 'package:kalshi_score/score_calculator/widgets/footer.dart';
+import 'package:kalshi_score/score_results/score_results.dart';
+import 'package:kalshi_score/widgets/widgets.dart';
 
-class ScoreCalculatorInputPage extends StatelessWidget {
-  const ScoreCalculatorInputPage({super.key});
+class ScoreCalculatorPage extends StatelessWidget {
+  const ScoreCalculatorPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -86,8 +86,7 @@ class _FormState extends State<_Form> {
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 Navigator.of(context).push(
-                  MaterialPageRoute(
-                      builder: (_) => const ScoreCalculatorResultsPage()),
+                  MaterialPageRoute(builder: (_) => const ScoreResultsPage()),
                 );
               }
             },

@@ -1,1 +1,1 @@
-export 'input/view/score_calculator_input_page.dart';
+export 'view/score_calculator_page.dart';

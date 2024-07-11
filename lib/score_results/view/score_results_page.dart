@@ -1,11 +1,11 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:kalshi_score/score_calculator/widgets/footer.dart';
-import 'package:kalshi_score/score_calculator/widgets/score_indicator.dart';
+import 'package:kalshi_score/score_results/view/score_indicator.dart';
+import 'package:kalshi_score/widgets/widgets.dart';
 
-class ScoreCalculatorResultsPage extends StatelessWidget {
-  const ScoreCalculatorResultsPage({super.key});
+class ScoreResultsPage extends StatelessWidget {
+  const ScoreResultsPage({super.key});
 
   final score = Score.healthy;
 

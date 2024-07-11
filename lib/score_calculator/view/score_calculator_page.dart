@@ -111,11 +111,13 @@ class _FormState extends State<_Form> {
           MoneyInputField(
             label: 'Annual income',
             onSaved: (value) => _annualIncome = value ?? 0,
+            textInputAction: TextInputAction.next,
           ),
           const SizedBox(height: 16),
           MoneyInputField(
             label: 'Monthly Costs',
             onSaved: (value) => _monthlyCosts = value ?? 0,
+            textInputAction: TextInputAction.done,
           ),
           const SizedBox(height: 16),
           AppButton(

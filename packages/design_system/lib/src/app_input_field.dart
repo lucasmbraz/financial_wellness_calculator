@@ -4,9 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pattern_formatter/pattern_formatter.dart';
 
 class AppInputField extends StatelessWidget {
-  const AppInputField({super.key, required this.label});
+  const AppInputField({super.key, required this.label, required this.onSaved});
 
   final String label;
+  final FormFieldSetter<double> onSaved;
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +17,7 @@ class AppInputField extends StatelessWidget {
         AppText.description(label),
         const SizedBox(height: 8),
         TextFormField(
+          onSaved: (value) => onSaved(value.toDouble()),
           inputFormatters: [ThousandsFormatter()],
           keyboardType: TextInputType.number,
           style: AppTextStyles.lgHeadingSmall.copyWith(
@@ -50,5 +52,15 @@ class AppInputField extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+extension on String? {
+  String _raw() {
+    return this?.replaceAll(',', '').replaceAll('.', '') ?? '';
+  }
+
+  double toDouble() {
+    return double.tryParse(_raw()) ?? 0;
   }
 }

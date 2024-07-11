@@ -2,8 +2,8 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:kalshi_score/extensions/num_extension.dart';
 import 'package:kalshi_score/score_calculator/cubit/score_calculator_cubit.dart';
+import 'package:kalshi_score/score_calculator/view/score_input_form.dart';
 import 'package:kalshi_score/score_results/score_results.dart';
 import 'package:kalshi_score/widgets/widgets.dart';
 
@@ -73,7 +73,14 @@ class _View extends StatelessWidget {
                             color: context.appColors.foregroundTertiary,
                           ),
                           const SizedBox(height: 16),
-                          const _Form(),
+                          ScoreInputForm(
+                            onSubmit: (annualIncome, monthlyCost) => context
+                                .read<ScoreCalculatorCubit>()
+                                .calculateScore(
+                                  annualGrossIncome: annualIncome,
+                                  monthlyCost: monthlyCost,
+                                ),
+                          ),
                         ],
                       ),
                     ),
@@ -85,55 +92,6 @@ class _View extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class _Form extends StatefulWidget {
-  const _Form();
-
-  @override
-  State<_Form> createState() => _FormState();
-}
-
-class _FormState extends State<_Form> {
-  final _formKey = GlobalKey<FormState>();
-
-  double _annualIncome = 0;
-  double _monthlyCosts = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        children: [
-          MoneyInputField(
-            label: 'Annual income',
-            onSaved: (value) => _annualIncome = value ?? 0,
-            textInputAction: TextInputAction.next,
-          ),
-          const SizedBox(height: 16),
-          MoneyInputField(
-            label: 'Monthly Costs',
-            onSaved: (value) => _monthlyCosts = value ?? 0,
-            textInputAction: TextInputAction.done,
-          ),
-          const SizedBox(height: 16),
-          AppButton(
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-                context.read<ScoreCalculatorCubit>().calculateScore(
-                      annualGrossIncome: _annualIncome.money,
-                      monthlyCost: _monthlyCosts.money,
-                    );
-              }
-            },
-            child: const Text('Continue'),
-          ),
-        ],
       ),
     );
   }

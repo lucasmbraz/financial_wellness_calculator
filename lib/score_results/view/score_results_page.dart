@@ -13,10 +13,7 @@ class ScoreResultsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: context.appColors.backgroundTertiary,
-      appBar: AppBar(
-        title: SvgPicture.asset('assets/logo.svg', height: 20),
-        automaticallyImplyLeading: false,
-      ),
+      appBar: const KalshiAppBar(automaticallyImplyLeading: false),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),

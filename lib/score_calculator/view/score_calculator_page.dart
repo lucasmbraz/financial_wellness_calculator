@@ -10,9 +10,7 @@ class ScoreCalculatorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: SvgPicture.asset('assets/logo.svg', height: 20),
-      ),
+      appBar: const KalshiAppBar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),

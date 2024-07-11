@@ -1,11 +1,18 @@
 import 'package:kalshi_score/models/models.dart';
 
 class NetIncome implements Money {
-  NetIncome({required this.grossIncome, required this.taxRate});
+  NetIncome({
+    required Money grossIncome,
+    required TaxRate taxRate,
+  })  : _grossIncome = grossIncome,
+        _taxRate = taxRate;
 
-  final Money grossIncome;
-  final TaxRate taxRate;
+  final Money _grossIncome;
+  final TaxRate _taxRate;
 
   @override
-  double get value => grossIncome.value * (1 - taxRate.value);
+  double get value => _grossIncome.value * (1 - _taxRate.value);
+
+  @override
+  String toString() => '\$$value';
 }

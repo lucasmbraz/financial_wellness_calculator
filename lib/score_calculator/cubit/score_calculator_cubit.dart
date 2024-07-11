@@ -4,18 +4,25 @@ import 'package:kalshi_score/models/models.dart';
 
 part 'score_calculator_state.dart';
 
+const _defaultTaxRate = TaxRate(0.08);
+
 class ScoreCalculatorCubit extends Cubit<ScoreCalculatorState> {
   ScoreCalculatorCubit() : super(const ScoreCalculatorState());
 
   void calculateScore({
-    required double annualIncome,
-    required double monthlyCosts,
+    required Money annualGrossIncome,
+    required Money monthlyCost,
   }) {
     _resetRating();
 
+    final annualCost = AnnualCost(monthlyCost: monthlyCost);
+    final netIncome = NetIncome(
+      grossIncome: annualGrossIncome,
+      taxRate: _defaultTaxRate,
+    );
     final score = Score(
-      annualGrossIncome: annualIncome,
-      monthlyCosts: monthlyCosts,
+      annualCost: annualCost,
+      annualNetIncome: netIncome,
     );
 
     emit(state.copyWith(rating: score.rating));

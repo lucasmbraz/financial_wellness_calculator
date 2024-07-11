@@ -1,4 +1,4 @@
-const _incomeTax = 0.08;
+import 'package:kalshi_score/models/models.dart';
 
 enum ScoreRating {
   healthy,
@@ -7,23 +7,20 @@ enum ScoreRating {
 }
 
 class Score {
-  const Score({
-    required this.annualGrossIncome,
-    required this.monthlyCosts,
-  });
+  Score({
+    required NetIncome annualNetIncome,
+    required AnnualCost annualCost,
+  })  : _annualNetIncome = annualNetIncome,
+        _annualCost = annualCost;
 
-  final double annualGrossIncome;
-  final double monthlyCosts;
+  final NetIncome _annualNetIncome;
+  final AnnualCost _annualCost;
 
-  double get _annualNetIncome => annualGrossIncome * (1 - _incomeTax);
-
-  double get _annualCosts => monthlyCosts * 12;
-
-  double get _costsRatio => _annualCosts / _annualNetIncome;
+  double get _costsRatio => _annualCost.value / _annualNetIncome.value;
 
   ScoreRating get rating => switch (_costsRatio) {
-        < 0.25 => ScoreRating.healthy,
-        < 0.75 => ScoreRating.average,
+        <= 0.25 => ScoreRating.healthy,
+        <= 0.75 => ScoreRating.average,
         _ => ScoreRating.unhealthy,
       };
 }

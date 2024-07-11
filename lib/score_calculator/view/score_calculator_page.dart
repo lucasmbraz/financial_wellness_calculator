@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:kalshi_score/extensions/num_extension.dart';
 import 'package:kalshi_score/score_calculator/cubit/score_calculator_cubit.dart';
 import 'package:kalshi_score/score_results/score_results.dart';
 import 'package:kalshi_score/widgets/widgets.dart';
@@ -125,8 +126,8 @@ class _FormState extends State<_Form> {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 context.read<ScoreCalculatorCubit>().calculateScore(
-                      annualIncome: _annualIncome,
-                      monthlyCosts: _monthlyCosts,
+                      annualGrossIncome: _annualIncome.money,
+                      monthlyCost: _monthlyCosts.money,
                     );
               }
             },

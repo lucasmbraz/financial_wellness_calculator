@@ -1,3 +1,4 @@
+import 'package:kalshi_score/extensions/extensions.dart';
 import 'package:kalshi_score/models/models.dart';
 import 'package:test/test.dart';
 
@@ -23,10 +24,4 @@ void main() {
       });
     }
   });
-}
-
-extension on num {
-  Money get money => Money(toDouble());
-
-  TaxRate get taxRate => TaxRate(toDouble());
 }

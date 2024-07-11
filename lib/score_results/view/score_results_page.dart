@@ -1,13 +1,14 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:kalshi_score/models/models.dart';
 import 'package:kalshi_score/score_results/view/score_indicator.dart';
 import 'package:kalshi_score/widgets/widgets.dart';
 
 class ScoreResultsPage extends StatelessWidget {
-  const ScoreResultsPage({super.key});
+  const ScoreResultsPage({super.key, required this.scoreRating});
 
-  final score = Score.healthy;
+  final ScoreRating scoreRating;
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +43,9 @@ class ScoreResultsPage extends StatelessWidget {
                     children: [
                       SvgPicture.asset('assets/score_icon.svg', height: 48),
                       const SizedBox(height: 24),
-                      ScoreIndicator(score: score),
+                      ScoreIndicator(rating: scoreRating),
                       const SizedBox(height: 24),
-                      AppText.headingSmall(score.title),
+                      AppText.headingSmall(scoreRating.title),
                       RichText(
                         textAlign: TextAlign.center,
                         text: TextSpan(
@@ -54,7 +55,7 @@ class ScoreResultsPage extends StatelessWidget {
                           ),
                           children: [
                             TextSpan(
-                              text: score.description,
+                              text: scoreRating.description,
                               style:
                                   const TextStyle(fontWeight: FontWeight.w600),
                             ),
@@ -80,20 +81,20 @@ class ScoreResultsPage extends StatelessWidget {
   }
 }
 
-extension on Score {
+extension on ScoreRating {
   String get title {
     return switch (this) {
-      Score.healthy => 'Congratulations!',
-      Score.average => 'There is room for improvement.',
-      Score.unhealthy => 'Caution!',
+      ScoreRating.healthy => 'Congratulations!',
+      ScoreRating.average => 'There is room for improvement.',
+      ScoreRating.unhealthy => 'Caution!',
     };
   }
 
   String get description {
     return switch (this) {
-      Score.healthy => 'Healthy.',
-      Score.average => 'Average.',
-      Score.unhealthy => 'Unhealthy.',
+      ScoreRating.healthy => 'Healthy.',
+      ScoreRating.average => 'Average.',
+      ScoreRating.unhealthy => 'Unhealthy.',
     };
   }
 }

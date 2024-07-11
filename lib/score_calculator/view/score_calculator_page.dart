@@ -25,9 +25,12 @@ class _View extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<ScoreCalculatorCubit, ScoreCalculatorState>(
       listener: (context, state) {
-        if (state.rating != null) {
+        final rating = state.rating;
+        if (rating != null) {
           Navigator.of(context).push(
-            MaterialPageRoute(builder: (_) => const ScoreResultsPage()),
+            MaterialPageRoute(
+              builder: (_) => ScoreResultsPage(scoreRating: rating),
+            ),
           );
         }
       },

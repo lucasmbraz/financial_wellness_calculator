@@ -1,35 +1,24 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-
-enum Score {
-  healthy(color: Colors.green),
-  average(color: Colors.yellow),
-  unhealthy(color: Colors.red);
-
-  const Score({
-    required this.color,
-  });
-
-  final Color color;
-}
+import 'package:kalshi_score/models/models.dart';
 
 class ScoreIndicator extends StatelessWidget {
-  const ScoreIndicator({super.key, required this.score});
+  const ScoreIndicator({super.key, required this.rating});
 
-  final Score score;
+  final ScoreRating rating;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        _Pill(color: score.color, active: score == Score.healthy),
+        _Pill(color: rating.color, active: rating.isHealthy),
         Row(
           children: [
             Flexible(
               flex: 2,
               child: _Pill(
-                color: score.color,
-                active: score == Score.healthy || score == Score.average,
+                color: rating.color,
+                active: rating.isHealthy || rating.isAverage,
               ),
             ),
             const Flexible(flex: 1, child: SizedBox.shrink()),
@@ -40,7 +29,7 @@ class ScoreIndicator extends StatelessWidget {
             Flexible(
                 flex: 1,
                 child: _Pill(
-                  color: score.color,
+                  color: rating.color,
                   active: true,
                 )),
             const Flexible(flex: 2, child: SizedBox.shrink()),
@@ -69,4 +58,21 @@ class _Pill extends StatelessWidget {
       ),
     );
   }
+}
+
+extension on ScoreRating {
+  Color get color {
+    switch (this) {
+      case ScoreRating.healthy:
+        return Colors.green;
+      case ScoreRating.average:
+        return Colors.yellow;
+      case ScoreRating.unhealthy:
+        return Colors.red;
+    }
+  }
+
+  bool get isHealthy => this == ScoreRating.healthy;
+
+  bool get isAverage => this == ScoreRating.average;
 }

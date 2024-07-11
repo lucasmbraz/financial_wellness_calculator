@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pattern_formatter/pattern_formatter.dart';
 
-class AppInputField extends StatelessWidget {
-  const AppInputField({super.key, required this.label, required this.onSaved});
+class MoneyInputField extends StatelessWidget {
+  const MoneyInputField(
+      {super.key, required this.label, required this.onSaved});
 
   final String label;
   final FormFieldSetter<double> onSaved;

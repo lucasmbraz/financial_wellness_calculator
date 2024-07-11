@@ -105,12 +105,12 @@ class _FormState extends State<_Form> {
       key: _formKey,
       child: Column(
         children: [
-          AppInputField(
+          MoneyInputField(
             label: 'Annual income',
             onSaved: (value) => _annualIncome = value ?? 0,
           ),
           const SizedBox(height: 16),
-          AppInputField(
+          MoneyInputField(
             label: 'Monthly Costs',
             onSaved: (value) => _monthlyCosts = value ?? 0,
           ),

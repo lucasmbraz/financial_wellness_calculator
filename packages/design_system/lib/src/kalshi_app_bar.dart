@@ -10,6 +10,7 @@ class KalshiAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: SvgPicture.asset('assets/logo.svg', height: 20),
+      centerTitle: true,
       automaticallyImplyLeading: automaticallyImplyLeading,
     );
   }

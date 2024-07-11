@@ -44,8 +44,8 @@ class AppInputField extends StatelessWidget {
             ),
           ),
           validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please enter some text';
+            if (value == null || value.isEmpty || value.toDouble() == 0) {
+              return 'Please enter a value greater than zero';
             }
             return null;
           },

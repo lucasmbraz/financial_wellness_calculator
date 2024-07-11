@@ -3,7 +3,7 @@ import 'package:kalshi_score/models/models.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Annual Costs', () {
+  group('Annual Cost', () {
     final testCases = <(Money, double)>[
       (100.money, 1200),
       (3000.money, 36000),

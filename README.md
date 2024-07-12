@@ -125,7 +125,8 @@ The example below shows WHAT, a net income, rather than HOW to calculate it:
 
 ```dart
 
-final grossIncome = 1000.money;
-final taxRate = 0.08.taxRate;
-final netIncome = NetIncome(grossIncome: grossIncome, taxRate: taxRate);
+final netIncome = NetIncome(
+  grossIncome: 1000.money,
+  taxRate: 0.08.taxRate,
+);
 ```

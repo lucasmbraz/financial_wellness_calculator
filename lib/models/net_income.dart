@@ -1,7 +1,8 @@
+import 'package:equatable/equatable.dart';
 import 'package:kalshi_score/models/models.dart';
 
-class NetIncome implements Money {
-  NetIncome({
+class NetIncome extends Equatable implements Money {
+  const NetIncome({
     required Money grossIncome,
     required TaxRate taxRate,
   })  : _grossIncome = grossIncome,
@@ -15,4 +16,7 @@ class NetIncome implements Money {
 
   @override
   String toString() => '\$$value';
+
+  @override
+  List<Object> get props => [_grossIncome, _taxRate];
 }

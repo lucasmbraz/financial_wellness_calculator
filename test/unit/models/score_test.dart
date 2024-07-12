@@ -33,14 +33,14 @@ void main() {
   });
 }
 
-class FakeAnnualCost implements AnnualCost {
+class FakeAnnualCost extends Fake implements AnnualCost {
   FakeAnnualCost(this.value);
 
   @override
   final double value;
 }
 
-class FakeNetIncome implements NetIncome {
+class FakeNetIncome extends Fake implements NetIncome {
   FakeNetIncome(this.value);
 
   @override

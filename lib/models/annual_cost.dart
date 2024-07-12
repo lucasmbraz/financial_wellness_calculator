@@ -1,7 +1,8 @@
+import 'package:equatable/equatable.dart';
 import 'package:kalshi_score/models/models.dart';
 
-class AnnualCost implements Money {
-  AnnualCost({required Money monthlyCost}) : _monthlyCost = monthlyCost;
+class AnnualCost extends Equatable implements Money {
+  const AnnualCost({required Money monthlyCost}) : _monthlyCost = monthlyCost;
 
   final Money _monthlyCost;
 
@@ -10,4 +11,7 @@ class AnnualCost implements Money {
 
   @override
   String toString() => '\$$value';
+
+  @override
+  List<Object> get props => [_monthlyCost];
 }

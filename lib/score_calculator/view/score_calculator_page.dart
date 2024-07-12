@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kalshi_score/score_calculator/cubit/score_calculator_cubit.dart';
 import 'package:kalshi_score/score_calculator/view/score_input_form.dart';
 import 'package:kalshi_score/score_results/score_results.dart';
-import 'package:kalshi_score/widgets/widgets.dart';
+import 'package:kalshi_score/shared/shared.dart';
 
 class ScoreCalculatorPage extends StatelessWidget {
   const ScoreCalculatorPage({super.key, this.cubit});

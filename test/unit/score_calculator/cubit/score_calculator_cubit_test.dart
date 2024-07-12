@@ -1,8 +1,9 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:kalshi_score/extensions/extensions.dart';
-import 'package:kalshi_score/models/models.dart';
 import 'package:kalshi_score/score_calculator/cubit/score_calculator_cubit.dart';
+import 'package:kalshi_score/score_calculator/extensions/extensions.dart';
+import 'package:kalshi_score/score_calculator/models/models.dart';
+import 'package:kalshi_score/shared/shared.dart';
 
 void main() {
   group('ScoreCalculatorCubit', () {

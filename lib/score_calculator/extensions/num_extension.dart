@@ -1,4 +1,4 @@
-import 'package:kalshi_score/models/models.dart';
+import '../models/models.dart';
 
 extension NumExtension on num {
   Money get money => Money(toDouble());

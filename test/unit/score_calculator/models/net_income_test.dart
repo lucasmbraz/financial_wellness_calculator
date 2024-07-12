@@ -1,5 +1,5 @@
-import 'package:kalshi_score/extensions/extensions.dart';
-import 'package:kalshi_score/models/models.dart';
+import 'package:kalshi_score/score_calculator/extensions/extensions.dart';
+import 'package:kalshi_score/score_calculator/models/models.dart';
 import 'package:test/test.dart';
 
 void main() {

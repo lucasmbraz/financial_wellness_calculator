@@ -1,10 +1,6 @@
-import 'package:kalshi_score/models/models.dart';
+import 'package:kalshi_score/shared/shared.dart';
 
-enum ScoreRating {
-  healthy,
-  average,
-  unhealthy,
-}
+import 'models.dart';
 
 class Score {
   Score({

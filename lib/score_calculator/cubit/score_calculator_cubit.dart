@@ -1,6 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:kalshi_score/models/models.dart';
+import 'package:kalshi_score/shared/shared.dart';
+
+import '../models/models.dart';
 
 part 'score_calculator_state.dart';
 

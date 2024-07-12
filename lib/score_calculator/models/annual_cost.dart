@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:kalshi_score/models/models.dart';
+
+import 'models.dart';
 
 class AnnualCost extends Equatable implements Money {
   const AnnualCost({required Money monthlyCost}) : _monthlyCost = monthlyCost;

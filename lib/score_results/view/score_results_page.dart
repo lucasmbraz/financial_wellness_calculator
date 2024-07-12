@@ -1,9 +1,8 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:kalshi_score/models/models.dart';
 import 'package:kalshi_score/score_results/view/score_indicator.dart';
-import 'package:kalshi_score/widgets/widgets.dart';
+import 'package:kalshi_score/shared/shared.dart';
 
 class ScoreResultsPage extends StatelessWidget {
   const ScoreResultsPage({super.key, required this.scoreRating});

@@ -1,6 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:kalshi_score/models/models.dart';
+import 'package:kalshi_score/shared/shared.dart';
 
 class ScoreIndicator extends StatelessWidget {
   const ScoreIndicator({super.key, required this.rating});

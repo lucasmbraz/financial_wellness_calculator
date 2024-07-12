@@ -1,7 +1,8 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:kalshi_score/extensions/extensions.dart';
-import 'package:kalshi_score/models/models.dart';
+
+import '../extensions/extensions.dart';
+import '../models/models.dart';
 
 typedef OnSubmit = void Function(Money annualIncome, Money monthlyCost);
 

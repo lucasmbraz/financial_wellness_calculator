@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
-import 'package:kalshi_score/models/models.dart';
 import 'package:kalshi_score/score_results/score_results.dart';
+import 'package:kalshi_score/shared/shared.dart';
 
 import '../../golden_tests_utils.dart';
 

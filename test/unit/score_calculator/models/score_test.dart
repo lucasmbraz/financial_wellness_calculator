@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:kalshi_score/models/models.dart';
+import 'package:kalshi_score/score_calculator/models/models.dart';
+import 'package:kalshi_score/shared/shared.dart';
 
 void main() {
   group('Score', () {

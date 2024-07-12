@@ -8,12 +8,14 @@ import 'package:kalshi_score/score_results/score_results.dart';
 import 'package:kalshi_score/widgets/widgets.dart';
 
 class ScoreCalculatorPage extends StatelessWidget {
-  const ScoreCalculatorPage({super.key});
+  const ScoreCalculatorPage({super.key, this.cubit});
+
+  final ScoreCalculatorCubit? cubit;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => ScoreCalculatorCubit(),
+      create: (_) => cubit ?? ScoreCalculatorCubit(),
       child: const _View(),
     );
   }

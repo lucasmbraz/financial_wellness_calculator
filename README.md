@@ -1,3 +1,7 @@
+# Financial Wellness Calculator - by Lucas M. Braz
+
+![cover](cover.png)
+
 ## Getting Started 🚀
 
 ### Prerequisites

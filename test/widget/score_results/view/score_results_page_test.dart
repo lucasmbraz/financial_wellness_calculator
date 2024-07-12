@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:golden_toolkit/golden_toolkit.dart';
 import 'package:kalshi_score/models/models.dart';
 import 'package:kalshi_score/score_results/score_results.dart';
+
+import '../../golden_tests_utils.dart';
 
 void main() {
   group('ScoreResultsPage', () {
@@ -48,6 +51,26 @@ void main() {
         ),
         findsOneWidget,
       );
+    });
+
+    testGoldens('Renders Correctly', (tester) async {
+      final builder = await deviceBuilder()
+        ..addScenario(
+          name: 'Healthy Score',
+          widget: const ScoreResultsPage(scoreRating: ScoreRating.healthy),
+        )
+        ..addScenario(
+          name: 'Average Score',
+          widget: const ScoreResultsPage(scoreRating: ScoreRating.average),
+        )
+        ..addScenario(
+          name: 'Unhealthy Score',
+          widget: const ScoreResultsPage(scoreRating: ScoreRating.unhealthy),
+        );
+
+      await tester.pumpDeviceBuilder(builder, wrapper: appWrapper());
+
+      await screenMatchesGolden(tester, 'score_results_page');
     });
   });
 }
